@@ -46,11 +46,13 @@ while (menu)
             }
         case 8:
             {
+                biblioteca.Prestar();
 
                 break;
             }
         case 9:
             {
+                biblioteca.Devolver();
                 break;
             }
         case 0:

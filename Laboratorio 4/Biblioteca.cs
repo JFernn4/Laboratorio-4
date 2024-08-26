@@ -77,5 +77,41 @@ namespace Laboratorio_4
                 Console.ReadKey();
             }
         }
+        public void Prestar()
+        {
+            Console.Clear();
+            Console.WriteLine("Título del libro:");
+            string libroBuscar = Console.ReadLine();
+            Libro buscar = listaLibros.Find(p => p.Titulo == libroBuscar);
+            if (buscar == null)
+            {
+                Console.WriteLine("No existe el libro.");
+                Console.ReadKey();
+            }
+            else
+            {
+                buscar.Disponible = false;
+                Console.WriteLine($"Se ha prestado el libro {buscar.Titulo} de {buscar.Autor}.");
+                Console.ReadKey();
+            }
+        }
+        public void Devolver()
+        {
+            Console.Clear();
+            Console.WriteLine("Título del libro:");
+            string libroBuscar = Console.ReadLine();
+            Libro buscar = listaLibros.Find(p => p.Titulo == libroBuscar);
+            if (buscar == null)
+            {
+                Console.WriteLine("No existe el libro.");
+                Console.ReadKey();
+            }
+            else
+            {
+                buscar.Disponible = true;
+                Console.WriteLine($"Se ha devuelto el libro {buscar.Titulo} de {buscar.Autor}.");
+                Console.ReadKey();
+            }
+        }
     }
 }
