@@ -19,17 +19,13 @@ namespace Laboratorio_4
         {
             Console.Clear();
             Console.WriteLine("Agregar un nuevo libro físico:");
-
             Console.WriteLine("Título: ");
             string titulo = Console.ReadLine();
-
             Console.WriteLine("Autor: ");
             string autor = Console.ReadLine();
-
             Console.WriteLine("¿Está disponible? (si/no): ");
             string disponibleInput = Console.ReadLine();
             bool disponible = disponibleInput.ToLower() == "si";
-
             Console.WriteLine("Número de copias:");
             int numeroCopias= Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Estante: ");
@@ -42,20 +38,15 @@ namespace Laboratorio_4
         {
             Console.Clear();
             Console.WriteLine("Agregar un nuevo libro digital:");
-
             Console.WriteLine("Título: ");
             string titulo = Console.ReadLine();
-
             Console.WriteLine("Autor: ");
             string autor = Console.ReadLine();
-
             Console.WriteLine("¿Está disponible? (si/no): ");
             string disponibleInput = Console.ReadLine();
             bool disponible = disponibleInput.ToLower() == "si";
-
             Console.WriteLine("Enlace: ");
             string enlace = Console.ReadLine();
-
             LibroDigital libroDigital = new LibroDigital(titulo, autor, disponible, enlace);
             AgregarLibro(libroDigital);
         }

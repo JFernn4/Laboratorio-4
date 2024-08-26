@@ -18,5 +18,38 @@ namespace Laboratorio_4
             Nombre = nombre;
             MetodoPago = metodoPago;
         }
+        List<Cliente>listaClientes= new List<Cliente>();
+        public void AgregarCliente(Cliente cliente)
+        {
+            listaClientes.Add(cliente);
+            Console.WriteLine("Se ha añadido al cliente.");
+            Console.ReadKey();
+        }
+        public void AgregarClienteRegular()
+        {
+            Console.Clear();
+            Console.WriteLine("Agregar un nuevo cliente:");
+            Console.WriteLine("ID:");
+            int iD=Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Nombre:");
+            string nombre = Console.ReadLine();
+            Console.WriteLine("Método de pago.");
+            string metodoPago= Console.ReadLine();
+            Cliente cliente= new Cliente(iD, nombre, metodoPago);
+            AgregarCliene(cliente);
+        }
+        public void AgregarClienteVIP()
+        {
+            Console.Clear();
+            Console.WriteLine("Agregar un nuevo cliente:");
+            Console.WriteLine("ID:");
+            int iD = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Nombre:");
+            string nombre = Console.ReadLine();
+            Console.WriteLine("Método de pago.");
+            string metodoPago = Console.ReadLine();
+            Cliente cliente = new Cliente(iD, nombre, metodoPago);
+            AgregarCliene(cliente);
+        }
     }
 }
