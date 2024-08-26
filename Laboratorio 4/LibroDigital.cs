@@ -13,5 +13,9 @@ namespace Laboratorio_4
         {
             Enlace = enlace;
         }
+        public override string ObtenerDetalles()
+        {
+            return base.ObtenerDetalles() + $", Enlace: {Enlace}.";
+        }
     }
 }

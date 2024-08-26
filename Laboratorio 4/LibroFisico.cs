@@ -15,5 +15,9 @@ namespace Laboratorio_4
            NumeroCopias = numeroCopias;
            Estante = estante;
         }
+        public override string ObtenerDetalles()
+        {
+            return base.ObtenerDetalles() + $", Copias:{NumeroCopias}, Estante: {Estante}";
+        }
     }
 }

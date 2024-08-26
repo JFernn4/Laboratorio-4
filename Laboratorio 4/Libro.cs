@@ -18,5 +18,9 @@ namespace Laboratorio_4
             Autor = autor;
             Disponible = disponible;
         }
+        public virtual string ObtenerDetalles()
+        {
+            return $"Título: {Titulo}, Autor: {Autor}, Disponible: {Disponible}";
+        }
     }
 }

@@ -31,9 +31,29 @@ while (menu)
             }
         case 5:
             {
+                biblioteca.MostrarLibros();
                 break;
             }
         case 6:
+            {
+                gestionClientes.MostrarClientes();
+                break;
+            }
+        case 7:
+            {
+                biblioteca.BuscarLibro();
+                break;
+            }
+        case 8:
+            {
+
+                break;
+            }
+        case 9:
+            {
+                break;
+            }
+        case 0:
             {
                 menu = false;
                 break;
@@ -48,7 +68,9 @@ static void MostrarMenu()
     Console.WriteLine("3. Registrar cliente regular..");
     Console.WriteLine("4. Registrar cliente VIP.");
     Console.WriteLine("5. Catálogo.");
-    Console.WriteLine("6. Buscar libro.");
-    Console.WriteLine("7. Prestar libro.");
-    Console.WriteLine("8. Salir.");
+    Console.WriteLine("6. Mostrar clientes.");
+    Console.WriteLine("7. Buscar libro.");
+    Console.WriteLine("8. Prestar libro.");
+    Console.WriteLine("9. Devolver libro.");
+    Console.WriteLine("0. Salir.");
 }

@@ -36,7 +36,7 @@ namespace Laboratorio_4
             Console.WriteLine("Método de pago.");
             string metodoPago= Console.ReadLine();
             Cliente cliente= new Cliente(iD, nombre, metodoPago);
-            AgregarCliene(cliente);
+            AgregarCliente(cliente);
         }
         public void AgregarClienteVIP()
         {
@@ -49,7 +49,20 @@ namespace Laboratorio_4
             Console.WriteLine("Método de pago.");
             string metodoPago = Console.ReadLine();
             Cliente cliente = new Cliente(iD, nombre, metodoPago);
-            AgregarCliene(cliente);
+            AgregarCliente(cliente);
+        }
+        public virtual string ObtenerDetalles()
+        {
+            return $"ID: {ID}, Nombre: {Nombre}, Método de pago: {MetodoPago}";
+        }
+        public void MostrarClientes()
+        {
+            Console.Clear();
+            foreach (Cliente cliente in listaClientes)
+            {
+                Console.WriteLine(cliente.ObtenerDetalles());
+            }
+            Console.ReadKey();
         }
     }
 }
