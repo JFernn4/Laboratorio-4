@@ -41,15 +41,19 @@ namespace Laboratorio_4
         public void AgregarClienteVIP()
         {
             Console.Clear();
-            Console.WriteLine("Agregar un nuevo cliente:");
-            Console.WriteLine("ID:");
-            int iD = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Nombre:");
-            string nombre = Console.ReadLine();
-            Console.WriteLine("Método de pago.");
-            string metodoPago = Console.ReadLine();
-            Cliente cliente = new Cliente(iD, nombre, metodoPago);
-            AgregarCliente(cliente);
+            try
+            {
+                Console.WriteLine("Agregar un nuevo cliente:");
+                Console.WriteLine("ID:");
+                int iD = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Nombre:");
+                string nombre = Console.ReadLine();
+                Console.WriteLine("Método de pago.");
+                string metodoPago = Console.ReadLine();
+                Cliente cliente = new Cliente(iD, nombre, metodoPago);
+                AgregarCliente(cliente);
+            }
+            catch (Exception ex) { Console.WriteLine("Ingresa un ID válido. " + ex.Message); Console.ReadKey(); }
         }
         public virtual string ObtenerDetalles()
         {

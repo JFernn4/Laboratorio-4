@@ -5,62 +5,66 @@ bool menu = true;
 int opcion;
 while (menu)
 {
-    MostrarMenu();
-    opcion= Convert.ToInt32(Console.ReadLine());
-    switch (opcion)
+    try
     {
-        case 1:
-            {
-                biblioteca.AgregarLibroDigital();
-                break;
-            }
-        case 2:
-            {
-                biblioteca.AgregarLibroFisico();
-                break;
-            }
-        case 3:
-            {
-                gestionClientes.AgregarClienteRegular();
-                break;
-            }
-        case 4:
-            {
-                gestionClientes.AgregarClienteVIP();
-                break;
-            }
-        case 5:
-            {
-                biblioteca.MostrarLibros();
-                break;
-            }
-        case 6:
-            {
-                gestionClientes.MostrarClientes();
-                break;
-            }
-        case 7:
-            {
-                biblioteca.BuscarLibro();
-                break;
-            }
-        case 8:
-            {
-                biblioteca.Prestar();
+        MostrarMenu();
+        opcion = Convert.ToInt32(Console.ReadLine());
+        switch (opcion)
+        {
+            case 1:
+                {
+                    biblioteca.AgregarLibroFisico();
+                    break;
+                }
+            case 2:
+                {
+                    biblioteca.AgregarLibroDigital();
+                    break;
+                }
+            case 3:
+                {
+                    gestionClientes.AgregarClienteRegular();
+                    break;
+                }
+            case 4:
+                {
+                    gestionClientes.AgregarClienteVIP();
+                    break;
+                }
+            case 5:
+                {
+                    biblioteca.MostrarLibros();
+                    break;
+                }
+            case 6:
+                {
+                    gestionClientes.MostrarClientes();
+                    break;
+                }
+            case 7:
+                {
+                    biblioteca.BuscarLibro();
+                    break;
+                }
+            case 8:
+                {
+                    biblioteca.Prestar();
 
-                break;
-            }
-        case 9:
-            {
-                biblioteca.Devolver();
-                break;
-            }
-        case 0:
-            {
-                menu = false;
-                break;
-            }
+                    break;
+                }
+            case 9:
+                {
+                    biblioteca.Devolver();
+                    break;
+                }
+            case 0:
+                {
+                    menu = false;
+                    break;
+                }
+        }
     }
+    catch (Exception ex) { Console.WriteLine("Ingresa una opción válida. "+ex.Message); Console.ReadKey(); }
 }
 static void MostrarMenu()
 {

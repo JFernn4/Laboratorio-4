@@ -19,33 +19,49 @@ namespace Laboratorio_4
         {
             Console.Clear();
             Console.WriteLine("Agregar un nuevo libro físico:");
-            Console.WriteLine("Título: ");
+            Console.Write("Título: ");
             string titulo = Console.ReadLine();
-            Console.WriteLine("Autor: ");
+            Console.Write("Autor: ");
             string autor = Console.ReadLine();
-            Console.WriteLine("¿Está disponible? (si/no): ");
+            Console.Write("¿Está disponible? (si/no): ");
             string disponibleInput = Console.ReadLine();
             bool disponible = disponibleInput.ToLower() == "si";
-            Console.WriteLine("Número de copias:");
-            int numeroCopias= Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Estante: ");
+
+            int numeroCopias;
+            while (true)
+            {
+                Console.Write("Número de copias: ");
+                try
+                {
+                    numeroCopias = Convert.ToInt32(Console.ReadLine());
+                    if (numeroCopias < 0)
+                    {
+                        Console.WriteLine("El número de copias no puede ser negativo.");
+                        continue;
+                    }
+                    break; 
+                }
+                catch (Exception ex) { Console.WriteLine("Ingresa un número válido."); Console.ReadKey(); }
+            }
+            Console.Write("Estante: ");
             string estante = Console.ReadLine();
 
             LibroFisico libroFisico = new LibroFisico(titulo, autor, disponible, numeroCopias, estante);
             AgregarLibro(libroFisico);
         }
+
         public void AgregarLibroDigital()
         {
             Console.Clear();
             Console.WriteLine("Agregar un nuevo libro digital:");
-            Console.WriteLine("Título: ");
+            Console.Write("Título: ");
             string titulo = Console.ReadLine();
-            Console.WriteLine("Autor: ");
+            Console.Write("Autor: ");
             string autor = Console.ReadLine();
-            Console.WriteLine("¿Está disponible? (si/no): ");
+            Console.Write("¿Está disponible? (si/no): ");
             string disponibleInput = Console.ReadLine();
             bool disponible = disponibleInput.ToLower() == "si";
-            Console.WriteLine("Enlace: ");
+            Console.Write("Enlace: ");
             string enlace = Console.ReadLine();
             LibroDigital libroDigital = new LibroDigital(titulo, autor, disponible, enlace);
             AgregarLibro(libroDigital);
