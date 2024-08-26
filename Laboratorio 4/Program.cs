@@ -1,4 +1,6 @@
-﻿bool menu = true;
+﻿using Laboratorio_4;
+Biblioteca biblioteca= new Biblioteca();
+bool menu = true;
 int opcion;
 while (menu)
 {
@@ -8,10 +10,12 @@ while (menu)
     {
         case 1:
             {
+                biblioteca.AgregarLibroDigital();
                 break;
             }
         case 2:
             {
+                biblioteca.AgregarLibroFisico();
                 break;
             }
         case 3:
@@ -36,10 +40,11 @@ while (menu)
 static void MostrarMenu()
 {
     Console.Clear();
-    Console.WriteLine("1. Agregar libro.");
-    Console.WriteLine("2. Registrar usuario.");
-    Console.WriteLine("3. Catálogo.");
-    Console.WriteLine("4. Buscar libro.");
-    Console.WriteLine("5. Prestar libro.");
-    Console.WriteLine("6. Salir.");
+    Console.WriteLine("1. Agregar libro físico.");
+    Console.WriteLine("2. Agregar libro digital.");
+    Console.WriteLine("3. Registrar usuario.");
+    Console.WriteLine("4. Catálogo.");
+    Console.WriteLine("5. Buscar libro.");
+    Console.WriteLine("6. Prestar libro.");
+    Console.WriteLine("7. Salir.");
 }
